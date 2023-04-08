@@ -26,20 +26,6 @@ public class MonyTransferNoPageObjectTest {
     }
 
     @Test
-    void shouldTransferMoneyBetweenOwnCardsV1() {
-        open("http://localhost:9999");
-
-        $("[data-test-id=login] input").setValue("vasya");
-        $("[data-test-id=password] input").setValue("qwerty123");
-        $("[data-test-id=action-login]").click();
-
-        $("[data-test-id=code] input").setValue("12345");
-        $("[data-test-id=action-verify]").click();
-
-        $("[data-test-id=dashboard]").shouldBe(Condition.visible);
-    }
-
-    @Test
     void shouldTransferFromFirstToSecond() {
         var firstCardInfo = getFirstCardInfo();
         var secondCardInfo = getSecondCardInfo();
